@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ag+oeocPDRqCpMbhR/1BqCuNeI92ho65AKz/fCUg60e6RjXWy+4QsUCdP9KRF6rXyITbsR9XCngO5LC4FQvBDg==",
+  "success": true,
+  "projectFilePath": "E:\\Angular+NetApi\\SmartSchool-WebApi\\SmartSchool-WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Micro\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.1\\microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
