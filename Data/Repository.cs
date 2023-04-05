@@ -126,5 +126,10 @@ namespace SmartSchool_WebApi.Data
 
             return await query.FirstOrDefaultAsync();    
             }
+
+        public Task GetAllProfessoresAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
