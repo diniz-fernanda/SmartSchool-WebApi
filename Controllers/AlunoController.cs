@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using SmartSchool_WebApi.Models;
+using SmartSchool_WebAPI.Data;
 
 namespace SmartSchool_WebApi.Controllers
 {
@@ -6,12 +8,20 @@ namespace SmartSchool_WebApi.Controllers
     [Route("api/[controller]")]
     public class AlunoController : ControllerBase
     {
+        private readonly IRepository _repo;
+
+        public AlunoController(IRepository repo)
+        {
+            _repo = repo;
+        }
+
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok();
+                var result = await _repo.GetAllAlunosAsync(true);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -19,5 +29,52 @@ namespace SmartSchool_WebApi.Controllers
             }
             
         }
+        [HttpGet("{AlunoId}")]
+        public async Task<IActionResult> GetByAlunoId(int AlunoId)
+        {
+            try
+            {
+                var result = await _repo.GetAlunoAsyncById(AlunoId, true);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+            
+        }
+        [HttpGet("ByDisciplina/{disciplinaId}")]
+        public async Task<IActionResult> GetByDisciplinaId(int disciplinaId)
+        {
+            try
+            {
+                var result = await _repo.GetAlunosAsyncByDisciplinaId(disciplinaId, false);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> post(Aluno model)
+        {
+            try
+            {
+                _repo.Add(model);
+                
+                if (await _repo.SaveChangesAsync())
+                {
+                    return Ok(model);                
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex.Message}");
+            }
+
+            return BadRequest();
+        }
+
     }
 }
